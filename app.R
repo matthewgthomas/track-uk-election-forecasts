@@ -1,6 +1,8 @@
 library(shiny)
 library(googlesheets4)
 library(rvest)
+library(dplyr)
+library(stringr)
 
 # ---- Load data ----
 # - Fetch data from Economist and Telegraph models -
@@ -21,7 +23,25 @@ mrp <-
   tables[[6]] |> 
   html_table(fill = T)
 
-#TODO: Clean up MRP data
+# Clean up MRP data
+mrp <- 
+  mrp |> 
+  slice(-1) |> 
+  
+  # Remove footnotes from the seat projections
+  mutate(across(Con:Others, ~str_remove(.x, "\\[.+\\]") |> as.integer(.x))) |> 
+  filter(!is.na(Con)) |> 
+
+  # Get week numbers from the date the poll finished
+  mutate(Published = str_extract(Datesconducted, "[0-9]+ [A-Za-z]{3} 2024")) |> 
+  mutate(Published = dmy(Published)) |> 
+  mutate(Week = isoweek(Published)) |> 
+  
+  # Keep polls that were conducted after the General Election was called
+  filter(Week >= 22) |> 
+  
+  select(Week, Con:Others)
+
 #TODO: Refactor this into a function
 
 # Get dates
