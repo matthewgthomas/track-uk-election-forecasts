@@ -1,0 +1,323 @@
+Week,Forecaster,Party,Seats
+2024-06-30T00:00:00Z,The Economist,Con,106
+2024-06-30T00:00:00Z,The Economist,Lab,434
+2024-06-30T00:00:00Z,The Economist,SNP,23
+2024-06-30T00:00:00Z,The Economist,Lib Dems,48
+2024-06-30T00:00:00Z,The Economist,Reform,2
+2024-06-30T00:00:00Z,The Economist,Others,5
+2024-06-23T00:00:00Z,The Economist,Con,186
+2024-06-23T00:00:00Z,The Economist,Lab,380
+2024-06-23T00:00:00Z,The Economist,SNP,30
+2024-06-23T00:00:00Z,The Economist,Lib Dems,24
+2024-06-23T00:00:00Z,The Economist,Reform,0
+2024-06-23T00:00:00Z,The Economist,Others,4
+2024-06-16T00:00:00Z,The Economist,Con,184
+2024-06-16T00:00:00Z,The Economist,Lab,390
+2024-06-16T00:00:00Z,The Economist,SNP,NA
+2024-06-16T00:00:00Z,The Economist,Lib Dems,NA
+2024-06-16T00:00:00Z,The Economist,Reform,NA
+2024-06-16T00:00:00Z,The Economist,Others,NA
+2024-06-09T00:00:00Z,The Economist,Con,187
+2024-06-09T00:00:00Z,The Economist,Lab,389
+2024-06-09T00:00:00Z,The Economist,SNP,NA
+2024-06-09T00:00:00Z,The Economist,Lib Dems,NA
+2024-06-09T00:00:00Z,The Economist,Reform,NA
+2024-06-09T00:00:00Z,The Economist,Others,NA
+2024-06-02T00:00:00Z,The Economist,Con,187
+2024-06-02T00:00:00Z,The Economist,Lab,388
+2024-06-02T00:00:00Z,The Economist,SNP,NA
+2024-06-02T00:00:00Z,The Economist,Lib Dems,NA
+2024-06-02T00:00:00Z,The Economist,Reform,NA
+2024-06-02T00:00:00Z,The Economist,Others,NA
+2024-05-19T00:00:00Z,The Economist,Con,192
+2024-05-19T00:00:00Z,The Economist,Lab,381
+2024-05-19T00:00:00Z,The Economist,SNP,NA
+2024-05-19T00:00:00Z,The Economist,Lib Dems,NA
+2024-05-19T00:00:00Z,The Economist,Reform,NA
+2024-05-19T00:00:00Z,The Economist,Others,NA
+2024-06-30T00:00:00Z,The Telegraph,Con,89
+2024-06-30T00:00:00Z,The Telegraph,Lab,442
+2024-06-30T00:00:00Z,The Telegraph,SNP,23
+2024-06-30T00:00:00Z,The Telegraph,Lib Dems,62
+2024-06-30T00:00:00Z,The Telegraph,Reform,10
+2024-06-30T00:00:00Z,The Telegraph,Others,5
+2024-06-23T00:00:00Z,The Telegraph,Con,86
+2024-06-23T00:00:00Z,The Telegraph,Lab,446
+2024-06-23T00:00:00Z,The Telegraph,SNP,29
+2024-06-23T00:00:00Z,The Telegraph,Lib Dems,64
+2024-06-23T00:00:00Z,The Telegraph,Reform,1
+2024-06-23T00:00:00Z,The Telegraph,Others,5
+2024-06-30T00:00:00Z,Electoral Calculus,Con,61
+2024-06-30T00:00:00Z,Electoral Calculus,Lab,470
+2024-06-30T00:00:00Z,Electoral Calculus,SNP,15
+2024-06-30T00:00:00Z,Electoral Calculus,Lib Dems,71
+2024-06-30T00:00:00Z,Electoral Calculus,Reform,7
+2024-06-30T00:00:00Z,Electoral Calculus,Others,NA
+2024-06-23T00:00:00Z,Electoral Calculus,Con,76
+2024-06-23T00:00:00Z,Electoral Calculus,Lab,457
+2024-06-23T00:00:00Z,Electoral Calculus,SNP,NA
+2024-06-23T00:00:00Z,Electoral Calculus,Lib Dems,NA
+2024-06-23T00:00:00Z,Electoral Calculus,Reform,3
+2024-06-23T00:00:00Z,Electoral Calculus,Others,NA
+2024-06-16T00:00:00Z,Electoral Calculus,Con,80
+2024-06-16T00:00:00Z,Electoral Calculus,Lab,461
+2024-06-16T00:00:00Z,Electoral Calculus,SNP,NA
+2024-06-16T00:00:00Z,Electoral Calculus,Lib Dems,NA
+2024-06-16T00:00:00Z,Electoral Calculus,Reform,1
+2024-06-16T00:00:00Z,Electoral Calculus,Others,NA
+2024-06-09T00:00:00Z,Electoral Calculus,Con,76
+2024-06-09T00:00:00Z,Electoral Calculus,Lab,472
+2024-06-09T00:00:00Z,Electoral Calculus,SNP,NA
+2024-06-09T00:00:00Z,Electoral Calculus,Lib Dems,NA
+2024-06-09T00:00:00Z,Electoral Calculus,Reform,NA
+2024-06-09T00:00:00Z,Electoral Calculus,Others,NA
+2024-06-02T00:00:00Z,Electoral Calculus,Con,66
+2024-06-02T00:00:00Z,Electoral Calculus,Lab,485
+2024-06-02T00:00:00Z,Electoral Calculus,SNP,NA
+2024-06-02T00:00:00Z,Electoral Calculus,Lib Dems,NA
+2024-06-02T00:00:00Z,Electoral Calculus,Reform,NA
+2024-06-02T00:00:00Z,Electoral Calculus,Others,NA
+2024-05-26T00:00:00Z,Electoral Calculus,Con,92
+2024-05-26T00:00:00Z,Electoral Calculus,Lab,479
+2024-05-26T00:00:00Z,Electoral Calculus,SNP,NA
+2024-05-26T00:00:00Z,Electoral Calculus,Lib Dems,NA
+2024-05-26T00:00:00Z,Electoral Calculus,Reform,NA
+2024-05-26T00:00:00Z,Electoral Calculus,Others,NA
+2024-06-30T00:00:00Z,Principal Fish,Con,87
+2024-06-30T00:00:00Z,Principal Fish,Lab,465
+2024-06-30T00:00:00Z,Principal Fish,SNP,20
+2024-06-30T00:00:00Z,Principal Fish,Lib Dems,52
+2024-06-30T00:00:00Z,Principal Fish,Reform,0
+2024-06-30T00:00:00Z,Principal Fish,Others,NA
+2024-06-23T00:00:00Z,Principal Fish,Con,134
+2024-06-23T00:00:00Z,Principal Fish,Lab,438
+2024-06-23T00:00:00Z,Principal Fish,SNP,NA
+2024-06-23T00:00:00Z,Principal Fish,Lib Dems,NA
+2024-06-23T00:00:00Z,Principal Fish,Reform,NA
+2024-06-23T00:00:00Z,Principal Fish,Others,NA
+2024-06-16T00:00:00Z,Principal Fish,Con,116
+2024-06-16T00:00:00Z,Principal Fish,Lab,457
+2024-06-16T00:00:00Z,Principal Fish,SNP,NA
+2024-06-16T00:00:00Z,Principal Fish,Lib Dems,NA
+2024-06-16T00:00:00Z,Principal Fish,Reform,NA
+2024-06-16T00:00:00Z,Principal Fish,Others,NA
+2024-06-09T00:00:00Z,Principal Fish,Con,106
+2024-06-09T00:00:00Z,Principal Fish,Lab,453
+2024-06-09T00:00:00Z,Principal Fish,SNP,NA
+2024-06-09T00:00:00Z,Principal Fish,Lib Dems,NA
+2024-06-09T00:00:00Z,Principal Fish,Reform,NA
+2024-06-09T00:00:00Z,Principal Fish,Others,NA
+2024-06-02T00:00:00Z,Principal Fish,Con,147
+2024-06-02T00:00:00Z,Principal Fish,Lab,443
+2024-06-02T00:00:00Z,Principal Fish,SNP,NA
+2024-06-02T00:00:00Z,Principal Fish,Lib Dems,NA
+2024-06-02T00:00:00Z,Principal Fish,Reform,NA
+2024-06-02T00:00:00Z,Principal Fish,Others,NA
+2024-05-26T00:00:00Z,Principal Fish,Con,92
+2024-05-26T00:00:00Z,Principal Fish,Lab,486
+2024-05-26T00:00:00Z,Principal Fish,SNP,NA
+2024-05-26T00:00:00Z,Principal Fish,Lib Dems,NA
+2024-05-26T00:00:00Z,Principal Fish,Reform,NA
+2024-05-26T00:00:00Z,Principal Fish,Others,NA
+2024-06-30T00:00:00Z,ElectionMapsUK,Con,80
+2024-06-30T00:00:00Z,ElectionMapsUK,Lab,453
+2024-06-30T00:00:00Z,ElectionMapsUK,SNP,17
+2024-06-30T00:00:00Z,ElectionMapsUK,Lib Dems,71
+2024-06-30T00:00:00Z,ElectionMapsUK,Reform,2
+2024-06-30T00:00:00Z,ElectionMapsUK,Others,NA
+2024-06-23T00:00:00Z,ElectionMapsUK,Con,88
+2024-06-23T00:00:00Z,ElectionMapsUK,Lab,451
+2024-06-23T00:00:00Z,ElectionMapsUK,SNP,NA
+2024-06-23T00:00:00Z,ElectionMapsUK,Lib Dems,NA
+2024-06-23T00:00:00Z,ElectionMapsUK,Reform,2
+2024-06-23T00:00:00Z,ElectionMapsUK,Others,NA
+2024-06-16T00:00:00Z,ElectionMapsUK,Con,101
+2024-06-16T00:00:00Z,ElectionMapsUK,Lab,442
+2024-06-16T00:00:00Z,ElectionMapsUK,SNP,NA
+2024-06-16T00:00:00Z,ElectionMapsUK,Lib Dems,NA
+2024-06-16T00:00:00Z,ElectionMapsUK,Reform,1
+2024-06-16T00:00:00Z,ElectionMapsUK,Others,NA
+2024-06-09T00:00:00Z,ElectionMapsUK,Con,101
+2024-06-09T00:00:00Z,ElectionMapsUK,Lab,451
+2024-06-09T00:00:00Z,ElectionMapsUK,SNP,NA
+2024-06-09T00:00:00Z,ElectionMapsUK,Lib Dems,NA
+2024-06-09T00:00:00Z,ElectionMapsUK,Reform,NA
+2024-06-09T00:00:00Z,ElectionMapsUK,Others,NA
+2024-06-02T00:00:00Z,ElectionMapsUK,Con,101
+2024-06-02T00:00:00Z,ElectionMapsUK,Lab,467
+2024-06-02T00:00:00Z,ElectionMapsUK,SNP,NA
+2024-06-02T00:00:00Z,ElectionMapsUK,Lib Dems,NA
+2024-06-02T00:00:00Z,ElectionMapsUK,Reform,NA
+2024-06-02T00:00:00Z,ElectionMapsUK,Others,NA
+2024-05-26T00:00:00Z,ElectionMapsUK,Con,110
+2024-05-26T00:00:00Z,ElectionMapsUK,Lab,460
+2024-05-26T00:00:00Z,ElectionMapsUK,SNP,NA
+2024-05-26T00:00:00Z,ElectionMapsUK,Lib Dems,NA
+2024-05-26T00:00:00Z,ElectionMapsUK,Reform,NA
+2024-05-26T00:00:00Z,ElectionMapsUK,Others,NA
+2024-06-30T00:00:00Z,Survation (MRP),Con,85
+2024-06-30T00:00:00Z,Survation (MRP),Lab,470
+2024-06-30T00:00:00Z,Survation (MRP),SNP,12
+2024-06-30T00:00:00Z,Survation (MRP),Lib Dems,56
+2024-06-30T00:00:00Z,Survation (MRP),Plaid Cymru,3
+2024-06-30T00:00:00Z,Survation (MRP),Green,2
+2024-06-30T00:00:00Z,Survation (MRP),Reform,4
+2024-06-30T00:00:00Z,Survation (MRP),Others,0
+2024-06-30T00:00:00Z,JL Partners (SRP),Con,105
+2024-06-30T00:00:00Z,JL Partners (SRP),Lab,450
+2024-06-30T00:00:00Z,JL Partners (SRP),SNP,15
+2024-06-30T00:00:00Z,JL Partners (SRP),Lib Dems,55
+2024-06-30T00:00:00Z,JL Partners (SRP),Plaid Cymru,3
+2024-06-30T00:00:00Z,JL Partners (SRP),Green,1
+2024-06-30T00:00:00Z,JL Partners (SRP),Reform,2
+2024-06-30T00:00:00Z,JL Partners (SRP),Others,19
+2024-06-30T00:00:00Z,Find Out Now/Electoral Calculus (MRP),Con,60
+2024-06-30T00:00:00Z,Find Out Now/Electoral Calculus (MRP),Lab,450
+2024-06-30T00:00:00Z,Find Out Now/Electoral Calculus (MRP),SNP,24
+2024-06-30T00:00:00Z,Find Out Now/Electoral Calculus (MRP),Lib Dems,71
+2024-06-30T00:00:00Z,Find Out Now/Electoral Calculus (MRP),Plaid Cymru,4
+2024-06-30T00:00:00Z,Find Out Now/Electoral Calculus (MRP),Green,4
+2024-06-30T00:00:00Z,Find Out Now/Electoral Calculus (MRP),Reform,18
+2024-06-30T00:00:00Z,Find Out Now/Electoral Calculus (MRP),Others,1
+2024-06-23T00:00:00Z,We Think (MRP),Con,76
+2024-06-23T00:00:00Z,We Think (MRP),Lab,465
+2024-06-23T00:00:00Z,We Think (MRP),SNP,29
+2024-06-23T00:00:00Z,We Think (MRP),Lib Dems,52
+2024-06-23T00:00:00Z,We Think (MRP),Plaid Cymru,3
+2024-06-23T00:00:00Z,We Think (MRP),Green,3
+2024-06-23T00:00:00Z,We Think (MRP),Reform,3
+2024-06-23T00:00:00Z,We Think (MRP),Others,19
+2024-06-23T00:00:00Z,Focaldata (MRP),Con,110
+2024-06-23T00:00:00Z,Focaldata (MRP),Lab,450
+2024-06-23T00:00:00Z,Focaldata (MRP),SNP,16
+2024-06-23T00:00:00Z,Focaldata (MRP),Lib Dems,50
+2024-06-23T00:00:00Z,Focaldata (MRP),Plaid Cymru,2
+2024-06-23T00:00:00Z,Focaldata (MRP),Green,1
+2024-06-23T00:00:00Z,Focaldata (MRP),Reform,1
+2024-06-23T00:00:00Z,Focaldata (MRP),Others,19
+2024-06-23T00:00:00Z,YouGov (MRP),Con,108
+2024-06-23T00:00:00Z,YouGov (MRP),Lab,425
+2024-06-23T00:00:00Z,YouGov (MRP),SNP,20
+2024-06-23T00:00:00Z,YouGov (MRP),Lib Dems,67
+2024-06-23T00:00:00Z,YouGov (MRP),Plaid Cymru,4
+2024-06-23T00:00:00Z,YouGov (MRP),Green,2
+2024-06-23T00:00:00Z,YouGov (MRP),Reform,5
+2024-06-23T00:00:00Z,YouGov (MRP),Others,0
+2024-06-23T00:00:00Z,Savanta (MRP),Con,53
+2024-06-23T00:00:00Z,Savanta (MRP),Lab,516
+2024-06-23T00:00:00Z,Savanta (MRP),SNP,8
+2024-06-23T00:00:00Z,Savanta (MRP),Lib Dems,50
+2024-06-23T00:00:00Z,Savanta (MRP),Plaid Cymru,4
+2024-06-23T00:00:00Z,Savanta (MRP),Green,0
+2024-06-23T00:00:00Z,Savanta (MRP),Reform,0
+2024-06-23T00:00:00Z,Savanta (MRP),Others,0
+2024-06-23T00:00:00Z,More in Common (MRP),Con,155
+2024-06-23T00:00:00Z,More in Common (MRP),Lab,406
+2024-06-23T00:00:00Z,More in Common (MRP),SNP,18
+2024-06-23T00:00:00Z,More in Common (MRP),Lib Dems,49
+2024-06-23T00:00:00Z,More in Common (MRP),Plaid Cymru,2
+2024-06-23T00:00:00Z,More in Common (MRP),Green,1
+2024-06-23T00:00:00Z,More in Common (MRP),Reform,0
+2024-06-23T00:00:00Z,More in Common (MRP),Others,0
+2024-06-16T00:00:00Z,Ipsos (MRP),Con,115
+2024-06-16T00:00:00Z,Ipsos (MRP),Lab,453
+2024-06-16T00:00:00Z,Ipsos (MRP),SNP,15
+2024-06-16T00:00:00Z,Ipsos (MRP),Lib Dems,38
+2024-06-16T00:00:00Z,Ipsos (MRP),Plaid Cymru,4
+2024-06-16T00:00:00Z,Ipsos (MRP),Green,3
+2024-06-16T00:00:00Z,Ipsos (MRP),Reform,3
+2024-06-16T00:00:00Z,Ipsos (MRP),Others,0
+2024-06-16T00:00:00Z,Survation (MRP),Con,72
+2024-06-16T00:00:00Z,Survation (MRP),Lab,456
+2024-06-16T00:00:00Z,Survation (MRP),SNP,37
+2024-06-16T00:00:00Z,Survation (MRP),Lib Dems,56
+2024-06-16T00:00:00Z,Survation (MRP),Plaid Cymru,2
+2024-06-16T00:00:00Z,Survation (MRP),Green,1
+2024-06-16T00:00:00Z,Survation (MRP),Reform,7
+2024-06-16T00:00:00Z,Survation (MRP),Others,0
+2024-06-09T00:00:00Z,Survation (MRP),Con,71
+2024-06-09T00:00:00Z,Survation (MRP),Lab,487
+2024-06-09T00:00:00Z,Survation (MRP),SNP,26
+2024-06-09T00:00:00Z,Survation (MRP),Lib Dems,43
+2024-06-09T00:00:00Z,Survation (MRP),Plaid Cymru,2
+2024-06-09T00:00:00Z,Survation (MRP),Green,0
+2024-06-09T00:00:00Z,Survation (MRP),Reform,3
+2024-06-09T00:00:00Z,Survation (MRP),Others,0
+2024-06-02T00:00:00Z,YouGov (MRP),Con,140
+2024-06-02T00:00:00Z,YouGov (MRP),Lab,422
+2024-06-02T00:00:00Z,YouGov (MRP),SNP,17
+2024-06-02T00:00:00Z,YouGov (MRP),Lib Dems,48
+2024-06-02T00:00:00Z,YouGov (MRP),Plaid Cymru,2
+2024-06-02T00:00:00Z,YouGov (MRP),Green,2
+2024-06-02T00:00:00Z,YouGov (MRP),Reform,0
+2024-06-02T00:00:00Z,YouGov (MRP),Others,0
+2024-06-02T00:00:00Z,More in Common (MRP),Con,180
+2024-06-02T00:00:00Z,More in Common (MRP),Lab,382
+2024-06-02T00:00:00Z,More in Common (MRP),SNP,35
+2024-06-02T00:00:00Z,More in Common (MRP),Lib Dems,30
+2024-06-02T00:00:00Z,More in Common (MRP),Plaid Cymru,3
+2024-06-02T00:00:00Z,More in Common (MRP),Green,1
+2024-06-02T00:00:00Z,More in Common (MRP),Reform,0
+2024-06-02T00:00:00Z,More in Common (MRP),Others,0
+2024-06-02T00:00:00Z,Find Out Now/Electoral Calculus (MRP - with tactical voting),Con,66
+2024-06-02T00:00:00Z,Find Out Now/Electoral Calculus (MRP - with tactical voting),Lab,476
+2024-06-02T00:00:00Z,Find Out Now/Electoral Calculus (MRP - with tactical voting),SNP,26
+2024-06-02T00:00:00Z,Find Out Now/Electoral Calculus (MRP - with tactical voting),Lib Dems,59
+2024-06-02T00:00:00Z,Find Out Now/Electoral Calculus (MRP - with tactical voting),Plaid Cymru,3
+2024-06-02T00:00:00Z,Find Out Now/Electoral Calculus (MRP - with tactical voting),Green,2
+2024-06-02T00:00:00Z,Find Out Now/Electoral Calculus (MRP - with tactical voting),Reform,0
+2024-06-02T00:00:00Z,Find Out Now/Electoral Calculus (MRP - with tactical voting),Others,0
+2024-06-02T00:00:00Z,Find Out Now/Electoral Calculus (MRP - without tactical voting),Con,72
+2024-06-02T00:00:00Z,Find Out Now/Electoral Calculus (MRP - without tactical voting),Lab,493
+2024-06-02T00:00:00Z,Find Out Now/Electoral Calculus (MRP - without tactical voting),SNP,22
+2024-06-02T00:00:00Z,Find Out Now/Electoral Calculus (MRP - without tactical voting),Lib Dems,39
+2024-06-02T00:00:00Z,Find Out Now/Electoral Calculus (MRP - without tactical voting),Plaid Cymru,4
+2024-06-02T00:00:00Z,Find Out Now/Electoral Calculus (MRP - without tactical voting),Green,2
+2024-06-02T00:00:00Z,Find Out Now/Electoral Calculus (MRP - without tactical voting),Reform,0
+2024-06-02T00:00:00Z,Find Out Now/Electoral Calculus (MRP - without tactical voting),Others,0
+2024-05-26T00:00:00Z,New Statesman,Con,128
+2024-05-26T00:00:00Z,New Statesman,Green,1
+2024-05-26T00:00:00Z,New Statesman,Lab,424
+2024-05-26T00:00:00Z,New Statesman,Lib Dems,66
+2024-05-26T00:00:00Z,New Statesman,Others,1
+2024-05-26T00:00:00Z,New Statesman,Plaid Cymru,3
+2024-05-26T00:00:00Z,New Statesman,SNP,26
+2024-06-02T00:00:00Z,New Statesman,Con,124
+2024-06-02T00:00:00Z,New Statesman,Green,1
+2024-06-02T00:00:00Z,New Statesman,Lab,439
+2024-06-02T00:00:00Z,New Statesman,Lib Dems,60
+2024-06-02T00:00:00Z,New Statesman,Others,1
+2024-06-02T00:00:00Z,New Statesman,Plaid Cymru,3
+2024-06-02T00:00:00Z,New Statesman,SNP,21
+2024-06-09T00:00:00Z,New Statesman,Con,98
+2024-06-09T00:00:00Z,New Statesman,Green,1
+2024-06-09T00:00:00Z,New Statesman,Lab,464
+2024-06-09T00:00:00Z,New Statesman,Lib Dems,65
+2024-06-09T00:00:00Z,New Statesman,Others,1
+2024-06-09T00:00:00Z,New Statesman,Plaid Cymru,3
+2024-06-09T00:00:00Z,New Statesman,Reform,1
+2024-06-09T00:00:00Z,New Statesman,SNP,20
+2024-06-23T00:00:00Z,New Statesman,Con,106
+2024-06-23T00:00:00Z,New Statesman,Green,1
+2024-06-23T00:00:00Z,New Statesman,Lab,447
+2024-06-23T00:00:00Z,New Statesman,Lib Dems,67
+2024-06-23T00:00:00Z,New Statesman,Others,1
+2024-06-23T00:00:00Z,New Statesman,Plaid Cymru,3
+2024-06-23T00:00:00Z,New Statesman,Reform,2
+2024-06-23T00:00:00Z,New Statesman,SNP,25
+2024-06-23T00:00:00Z,New Statesman,Con,98
+2024-06-23T00:00:00Z,New Statesman,Green,4
+2024-06-23T00:00:00Z,New Statesman,Lab,437
+2024-06-23T00:00:00Z,New Statesman,Lib Dems,63
+2024-06-23T00:00:00Z,New Statesman,Others,1
+2024-06-23T00:00:00Z,New Statesman,Plaid Cymru,3
+2024-06-23T00:00:00Z,New Statesman,Reform,6
+2024-06-23T00:00:00Z,New Statesman,SNP,24
+2024-06-30T00:00:00Z,New Statesman,Con,90
+2024-06-30T00:00:00Z,New Statesman,Green,4
+2024-06-30T00:00:00Z,New Statesman,Lab,437
+2024-06-30T00:00:00Z,New Statesman,Lib Dems,68
+2024-06-30T00:00:00Z,New Statesman,Others,1
+2024-06-30T00:00:00Z,New Statesman,Plaid Cymru,3
+2024-06-30T00:00:00Z,New Statesman,Reform,7
+2024-06-30T00:00:00Z,New Statesman,SNP,23
