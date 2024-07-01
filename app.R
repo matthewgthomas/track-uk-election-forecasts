@@ -7,6 +7,9 @@ library(purrr)
 library(tibble)
 library(tidyr)
 library(lubridate)
+library(ggplot2)
+library(plotly)
+library(forcats)
 
 # ---- Load data ----
 # - Fetch data from projection models -
@@ -93,22 +96,53 @@ ns_forecast <-
 # - Combine forecasts -
 forecasts <- bind_rows(projections, mrp, ns_forecast)
 
+recent_forecasts <- 
+  forecasts |> 
+  filter(Week == max(Week))
+
+lab_forecasts <- 
+  recent_forecasts |> 
+  filter(Party == "Lab")
+
+con_forecasts <- 
+  recent_forecasts |> 
+  filter(Party == "Con")
+
 # Get dates
-current_date <- max(economist$`Date published`)
+election_date <- ymd("2024-07-04")
+current_date <- max(forecasts$Week)
 
 # ---- UI ----
 ui <- fluidPage(
-    titlePanel("Seat Seer"),
+    titlePanel("Seat Seer: Tracking seat predictions for the UK's General Election"),
 
-    h3("What the forecasts are predicting"),
-    p("As of", format(current_date, "%A %d %B %Y"), ", blah")
-    
-    
+    h3("Every forecaster is predicting a Labour majority"),
+    p(str_glue("As of {format(current_date, '%A %d %B %Y')}, Labour is projected to win anywhere from {min(lab_forecasts$Seats)} to {max(lab_forecasts$Seats)} seats. The Conservatives could win between {min(con_forecasts$Seats)} and {max(con_forecasts$Seats)} seats.")),
+    p(str_glue("Combining these forecasts, Labour could win {round(mean(lab_forecasts$Seats), 0)} seats while the Conservatives could win {round(mean(con_forecasts$Seats), 0)}.")),
+    plotlyOutput("most_recent_forecasts")
 )
 
 # ---- Server ----
 server <- function(input, output) {
-
+  output$most_recent_forecasts <- renderPlotly({
+    plt <- 
+      recent_forecasts |>
+      ggplot(aes(x = reorder(Party, Seats, sum, na.rm = TRUE), y = Seats, colour = Party)) +
+      geom_point(aes(text = str_glue("{Forecaster} projects {Party} will win {Seats} seats.")), show.legend = FALSE) +
+      coord_flip() +
+      scale_y_continuous(position = "right") +
+      scale_color_manual(values = c("#0087dc", "#6AB023", "#d50000", "#F6B527", "gray", "#3B822B", "#12B6CF", "#F8ED7E")) +
+      theme_minimal() +
+      theme(
+        legend.position = "none"
+      ) +
+      labs(
+        x = NULL,
+        y = "Projected number of seats"
+      )
+    
+    ggplotly(plt, tooltip = "text")
+  })
 }
 
 # Run the application 
