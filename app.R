@@ -6,14 +6,19 @@ library(stringr)
 library(purrr)
 library(tibble)
 library(tidyr)
+library(lubridate)
 
 # ---- Load data ----
-# - Fetch data from Economist and Telegraph models -
+# - Fetch data from projection models -
 gs4_deauth()
 
-economist <- read_sheet("https://docs.google.com/spreadsheets/d/1R1c7oT6T8uCl8VlYhSIyjlLxy8_7J-p3voXcg-9T5fE/edit?gid=996500119#gid=996500119", sheet = "The Economist")
+projections_raw <- read_sheet("https://docs.google.com/spreadsheets/d/1R1c7oT6T8uCl8VlYhSIyjlLxy8_7J-p3voXcg-9T5fE/edit?gid=996500119#gid=996500119", sheet = "Projections")
 
-telegraph <- read_sheet("https://docs.google.com/spreadsheets/d/1R1c7oT6T8uCl8VlYhSIyjlLxy8_7J-p3voXcg-9T5fE/edit?gid=996500119#gid=996500119", sheet = "The Telegraph")
+projections <- 
+  projections_raw |> 
+  mutate(Week = ceiling_date(`Date published`, "1 week")) |> 
+  select(Week, Forecaster, Con, Lab, SNP:Others) |> 
+  pivot_longer(Con:Others, names_to = "Party", values_to = "Seats")
 
 # - Fetch MRP poll data from Wikipedia -
 tables <- 
@@ -38,12 +43,13 @@ mrp <-
   # Get week numbers from the date the poll finished
   mutate(Published = str_extract(Datesconducted, "[0-9]+ [A-Za-z]{3} 2024")) |> 
   mutate(Published = dmy(Published)) |> 
-  mutate(Week = isoweek(Published)) |> 
+  mutate(Week = ceiling_date(Published, "1 week")) |> 
   
   # Keep polls that were conducted after the General Election was called
-  filter(Week >= 22) |> 
+  filter(Week >= ymd("2024-05-22")) |> 
   
-  select(Week, Con:Others)
+  select(Week, Forecaster = Pollster, Con:Others) |> 
+  pivot_longer(cols = Con:Others, names_to = "Party", values_to = "Seats")
 
 #TODO: Refactor this into a function
 
@@ -54,14 +60,23 @@ ns_sheets <-
   sheet_names(ns_url) |> 
   set_names()
 
-ns_forecast <- 
+ns_forecast_raw <- 
   ns_sheets[1:(length(ns_sheets) - 2)] |> 
   map_df(~read_sheet(ns_url, sheet = .x), .id = "sheet")
 
 ns_forecast <- 
-  ns_forecast |> 
+  ns_forecast_raw |> 
+  rename(
+    `Lib Dems` = LDem,
+    Green = Grn,
+    Reform = Ref,
+    `Plaid Cymru` = PC,
+    Others = Ind_Oth
+  ) |> 
+  
+  # Find the party projected to win in each constituency
   rownames_to_column("id") |> 
-  pivot_longer(Con:Ind_Oth, names_to = "Party", values_to = "VoteShare") |> 
+  pivot_longer(Con:Others, names_to = "Party", values_to = "VoteShare") |> 
   group_by(id) |> 
   slice_max(VoteShare) |> 
   ungroup() |> 
@@ -71,8 +86,12 @@ ns_forecast <-
   ungroup() |> 
   
   mutate(Date = mdy(paste0(sheet, "/2024"))) |> 
-  mutate(Week = isoweek(Date)) |> 
-  select(Week, Party, Seats)
+  mutate(Week = ceiling_date(Date, "1 week")) |> 
+  mutate(Forecaster = "New Statesman") |> 
+  select(Week, Forecaster, Party, Seats)
+
+# - Combine forecasts -
+forecasts <- bind_rows(projections, mrp, ns_forecast)
 
 # Get dates
 current_date <- max(economist$`Date published`)
