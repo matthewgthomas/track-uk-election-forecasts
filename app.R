@@ -12,7 +12,9 @@ forecasts <- read_csv("forecasts.csv")
 
 recent_forecasts <- 
   forecasts |> 
-  filter(Week == max(Week))
+  group_by(Forecaster) |> 
+  filter(Week == max(Week)) |> 
+  ungroup()
 
 lab_forecasts <- 
   recent_forecasts |> 
