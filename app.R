@@ -3,6 +3,9 @@ library(googlesheets4)
 library(rvest)
 library(dplyr)
 library(stringr)
+library(purrr)
+library(tibble)
+library(tidyr)
 
 # ---- Load data ----
 # - Fetch data from Economist and Telegraph models -
@@ -43,6 +46,33 @@ mrp <-
   select(Week, Con:Others)
 
 #TODO: Refactor this into a function
+
+# - Fetch data from the New Statesman's model -
+ns_url <- "https://docs.google.com/spreadsheets/d/1lh0YfXwxNqLQXTvH-wKu0_zG1SVKjLqCTls7WTEXiVk/"
+
+ns_sheets <- 
+  sheet_names(ns_url) |> 
+  set_names()
+
+ns_forecast <- 
+  ns_sheets[1:(length(ns_sheets) - 2)] |> 
+  map_df(~read_sheet(ns_url, sheet = .x), .id = "sheet")
+
+ns_forecast <- 
+  ns_forecast |> 
+  rownames_to_column("id") |> 
+  pivot_longer(Con:Ind_Oth, names_to = "Party", values_to = "VoteShare") |> 
+  group_by(id) |> 
+  slice_max(VoteShare) |> 
+  ungroup() |> 
+
+  group_by(sheet) |> 
+  count(Party, name = "Seats") |> 
+  ungroup() |> 
+  
+  mutate(Date = mdy(paste0(sheet, "/2024"))) |> 
+  mutate(Week = isoweek(Date)) |> 
+  select(Week, Party, Seats)
 
 # Get dates
 current_date <- max(economist$`Date published`)
