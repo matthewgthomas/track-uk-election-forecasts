@@ -81,6 +81,9 @@ server <- function(input, output) {
       ggplot(aes(x = Week, y = Seats, group = Forecaster)) +
       geom_line(data = forecasts |> filter(Party == "Lab"), colour = "#d50000") +
       geom_line(data = forecasts |> filter(Party == "Con"), colour = "#0087dc") +
+      geom_point(data = forecasts |> filter(Party == "Lab"), colour = "#d50000", size = 2) +
+      geom_point(data = forecasts |> filter(Party == "Con"), colour = "#0087dc", size = 2) +
+      scale_y_continuous(limits = c(0, NA)) +
       theme_minimal() +
       theme(
         legend.position = "none"
