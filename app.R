@@ -96,7 +96,8 @@ ui <- fluidPage(
       tags$li(a("The Telegraph", href = "https://www.telegraph.co.uk/news/UK-election-predictions/")),
       tags$li(span("Multilevel regression with poststratification (MRP) and stacked regression with poststratification (SRP) polls", a("scraped from Wikipedia", href = "https://en.m.wikipedia.org/wiki/Opinion_polling_for_the_2024_United_Kingdom_general_election#MRP_and_SRP_polls")))
     ),
-    p("I use the terms 'forecast', 'prediction' and 'projection' interchangeably, although technically they refer to different things.")
+    p("I use the terms 'forecast', 'prediction' and 'projection' interchangeably, although technically they refer to different things."),
+    p(a("App and analysis", href = "https://github.com/matthewgthomas/track-uk-election-forecasts"), "by", a("Matthew Gwynfryn Thomas", href = "https://github.com/matthewgthomas"))
 )
 
 # ---- Server ----
