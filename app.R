@@ -119,7 +119,10 @@ ui <- fluidPage(
     h3("Every forecaster is predicting a Labour majority"),
     p(str_glue("As of {format(current_date, '%A %d %B %Y')}, Labour is projected to win anywhere from {min(lab_forecasts$Seats)} to {max(lab_forecasts$Seats)} seats. The Conservatives could win between {min(con_forecasts$Seats)} and {max(con_forecasts$Seats)} seats.")),
     p(str_glue("Combining these forecasts, Labour could win {round(mean(lab_forecasts$Seats), 0)} seats while the Conservatives could win {round(mean(con_forecasts$Seats), 0)}.")),
-    plotlyOutput("most_recent_forecasts")
+    plotlyOutput("most_recent_forecasts"),
+
+    h3("How have the forecasts changed over recent weeks?"),    
+    plotlyOutput("trends")
 )
 
 # ---- Server ----
@@ -142,6 +145,25 @@ server <- function(input, output) {
       )
     
     ggplotly(plt, tooltip = "text")
+  })
+  
+  output$trends <- renderPlotly({
+    plt <- 
+      forecasts |> 
+      filter(Party %in% c("Lab", "Con")) |> 
+      ggplot(aes(x = Week, y = Seats, group = Forecaster)) +
+      geom_line(data = forecasts |> filter(Party == "Lab"), colour = "#d50000") +
+      geom_line(data = forecasts |> filter(Party == "Con"), colour = "#0087dc") +
+      theme_minimal() +
+      theme(
+        legend.position = "none"
+      ) +
+      labs(
+        x = NULL,
+        y = "Projected number of seats"
+      )
+    
+    ggplotly(plt)
   })
 }
 
