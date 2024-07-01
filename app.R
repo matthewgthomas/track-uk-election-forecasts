@@ -122,7 +122,20 @@ ui <- fluidPage(
     plotlyOutput("most_recent_forecasts"),
 
     h3("How have the forecasts changed over recent weeks?"),    
-    plotlyOutput("trends")
+    plotlyOutput("trends"),
+    
+    h3("About the forecasts"),
+    p("This app brings together various prediction models from several forecasters:"),
+    tags$ul(
+      tags$li(a("The Economist", href = "https://www.economist.com/interactive/uk-general-election/forecast")),
+      tags$li(a("ElectionMapsUK", href = "https://electionmaps.uk/nowcast")),
+      tags$li(a("Electoral Calculus", href = "https://www.electoralcalculus.co.uk/prediction_main.html")),
+      tags$li(a("The New Statesman", href = "https://sotn.newstatesman.com/2024/05/britainpredicts")),
+      tags$li(a("Principal Fish", href = "https://principalfish.co.uk/electionmaps/?map=prediction_new")),
+      tags$li(a("The Telegraph", href = "https://www.telegraph.co.uk/news/UK-election-predictions/")),
+      tags$li(span("Multilevel regression with poststratification (MRP) and stacked regression with poststratification (SRP) polls", a("scraped from Wikipedia", href = "https://en.m.wikipedia.org/wiki/Opinion_polling_for_the_2024_United_Kingdom_general_election#MRP_and_SRP_polls")))
+    ),
+    p("I use the terms 'forecast', 'prediction' and 'projection' interchangeably, although technically they refer to different things.")
 )
 
 # ---- Server ----
