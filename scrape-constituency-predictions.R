@@ -1,6 +1,16 @@
 library(tidyverse)
 library(rvest)
 library(jsonlite)
+library(sf)
+
+# ---- List of constituencies ----
+# Source: https://geoportal.statistics.gov.uk/datasets/ons::westminster-parliamentary-constituencies-july-2024-names-and-codes-in-the-uk-v2/about
+cons <- read_sf("https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/PCON_2024_UK_NC_v2/FeatureServer/0/query?outFields=*&where=1%3D1&f=geojson")
+
+cons <- 
+  cons |> 
+  st_drop_geometry() |> 
+  select(constituency_code = PCON24CD, constituency_name = PCON24NM)
 
 # ---- Scrape nowcasts from ElectionMapsUK ----
 url <- "https://flo.uri.sh/visualisation/17427609/embed?auto=1"
@@ -50,3 +60,49 @@ flourish_data <-
   ))
 
 write_csv(flourish_data, str_glue("election-maps-uk-{format(lubridate::now(), '%Y-%m-%d')}.csv"))
+
+# ---- Scrape Principal Fish predictions ----
+url <- "https://principalfish.co.uk/electionmaps/?map=prediction_new"
+
+principal_fish_web <- 
+  read_html_live(url)
+
+principal_fish_web$click("#seatlist-extend", n_clicks = 1)
+
+principal_fish_data <- 
+  principal_fish_web |> 
+  html_elements("#seatlist-extended-data")
+
+principal_fish_constituencies <- 
+  principal_fish_data |> 
+  html_elements(".extended-seat") |> 
+  html_text()
+
+principal_fish_predictions <- 
+  principal_fish_data |> 
+  html_elements("div.party-flair") |> 
+  html_attr("class") |> 
+  str_remove("party-flair ")
+
+principal_fish <- tibble(constituency_name = principal_fish_constituencies, prediction = principal_fish_predictions)
+
+principal_fish <- 
+  principal_fish |> 
+  left_join(cons) |> 
+  relocate(constituency_code) |> 
+  filter(!str_detect(constituency_code, "^N")) |>   # Keep GB predictions only  
+  mutate(prediction = case_match(
+    prediction,
+    "labour" ~ "Lab",
+    "conservative" ~ "Con",
+    "libdems" ~ "Lib Dems",
+    "snp" ~ "SNP",
+    "green" ~ "Green",
+    "plaidcymru" ~ "Plaid Cymru",
+    "other" ~ "Other"
+    # This site wasn't predicting any Reform seats at the time of coding
+  ))
+
+unique(principal_fish$prediction)
+
+write_csv(principal_fish, str_glue("principal-fish-{format(lubridate::now(), '%Y-%m-%d')}.csv"))
