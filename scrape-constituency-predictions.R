@@ -106,3 +106,25 @@ principal_fish <-
 unique(principal_fish$prediction)
 
 write_csv(principal_fish, str_glue("principal-fish-{format(lubridate::now(), '%Y-%m-%d')}.csv"))
+
+# ---- The Economist ----
+# Fetch the data from their MRP model
+# Source: https://github.com/TheEconomist/britain-mrp-2024-estimates
+economist <- read_csv("https://github.com/TheEconomist/britain-mrp-2024-estimates/raw/main/economist_wethink_2024_mrp.csv")
+
+economist <- 
+  economist |> 
+  select(constituency_code = const_cd, constituency_name = const_nm, prediction = winner24) |> 
+  mutate(prediction = case_match(
+    prediction,
+    "lab" ~ "Lab",
+    "con" ~ "Con",
+    "ld" ~ "Lib Dems",
+    "snp" ~ "SNP",
+    "green" ~ "Green",
+    "pc" ~ "Plaid Cymru",
+    "ref" ~ "Reform",
+    "speaker" ~ "Speaker"
+  ))
+
+write_csv(economist, str_glue("economist-mrp-{format(lubridate::now(), '%Y-%m-%d')}.csv"))
