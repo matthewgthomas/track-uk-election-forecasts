@@ -128,3 +128,32 @@ economist <-
   ))
 
 write_csv(economist, str_glue("economist-mrp-{format(lubridate::now(), '%Y-%m-%d')}.csv"))
+
+# ---- Electoral Calculus ----
+ec_data_url <- "https://www.electoralcalculus.co.uk/fcgi-bin/calcwork23.py?seat="
+
+ec <- 
+  cons |> 
+  mutate(ec_name = case_when(
+    constituency_code == "S14000027" ~ "Na h-Eileanan An Iar (Western Isles)",
+    .default = constituency_name
+  )) |> 
+  mutate(ec_name = str_replace_all(ec_name, " ", "+")) |> 
+  mutate(ec_name = str_replace_all(ec_name, ",", "%2C")) |> 
+  mutate(prediction = NA_character_)
+
+for (i in 1:nrow(ec)) {
+  ec_page <- 
+    read_html(paste0(ec_data_url, ec$ec_name[i]))
+  
+  ec_prediction <- 
+    ec_page |> 
+    html_element(".pills") |> 
+    html_text() |> 
+    str_remove("Prediction: ")
+  
+  ec$prediction[i] <- ec_prediction
+  
+  print(paste0("Scraped ", ec$ec_name[i]))
+  Sys.sleep(1)
+}
