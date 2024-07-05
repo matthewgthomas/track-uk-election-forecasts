@@ -8,9 +8,14 @@ library(tidyr)
 library(lubridate)
 library(readr)
 
-# ---- Fetch data from projection models ----
-gs4_deauth()
+gs4_deauth()  # Don't need auth for my Google Sheet or New Statesman's
 
+# ---- Fetch results ----
+election_results <- read_sheet("https://docs.google.com/spreadsheets/d/1R1c7oT6T8uCl8VlYhSIyjlLxy8_7J-p3voXcg-9T5fE/edit?gid=996500119#gid=996500119", sheet = "Results")
+
+write_csv(election_results, "results.csv")
+
+# ---- Fetch data from projection models ----
 projections_raw <- read_sheet("https://docs.google.com/spreadsheets/d/1R1c7oT6T8uCl8VlYhSIyjlLxy8_7J-p3voXcg-9T5fE/edit?gid=996500119#gid=996500119", sheet = "Projections")
 
 projections <- 
@@ -18,6 +23,10 @@ projections <-
   mutate(Week = ceiling_date(`Date published`, "1 week")) |> 
   select(Week, Forecaster, Con, Lab, SNP:Others) |> 
   pivot_longer(Con:Others, names_to = "Party", values_to = "Seats")
+
+projections <- 
+  projections |> 
+  mutate(Week = if_else(Week == ymd("2024-07-07"), ymd("2024-07-04"), Week))
 
 # ---- Fetch MRP poll data from Wikipedia ----
 tables <- 
@@ -27,7 +36,7 @@ tables <-
 
 # Convert to a table
 mrp <- 
-  tables[[6]] |> 
+  tables[[7]] |> 
   html_table(fill = T)
 
 # Clean up MRP data
@@ -49,6 +58,9 @@ mrp <-
   
   select(Week, Forecaster = Pollster, Con:Others) |> 
   pivot_longer(cols = Con:Others, names_to = "Party", values_to = "Seats")
+
+mrp <- mrp |> 
+  mutate(Week = if_else(Week == ymd("2024-07-07"), ymd("2024-07-04"), Week))
 
 # ---- Fetch data from the New Statesman's model ----
 ns_url <- "https://docs.google.com/spreadsheets/d/1lh0YfXwxNqLQXTvH-wKu0_zG1SVKjLqCTls7WTEXiVk/"
@@ -86,6 +98,9 @@ ns_forecast <-
   mutate(Week = ceiling_date(Date, "1 week")) |> 
   mutate(Forecaster = "New Statesman") |> 
   select(Week, Forecaster, Party, Seats)
+
+ns_forecast <- ns_forecast |> 
+  mutate(Week = if_else(Week == ymd("2024-07-07"), ymd("2024-07-04"), Week))
 
 # ---- Combine forecasts ----
 forecasts <- bind_rows(projections, mrp, ns_forecast)
