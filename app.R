@@ -133,7 +133,7 @@ server <- function(input, output) {
     if (show_exit_poll) {
       plt <- 
         plt +
-        geom_point(data = election_results, aes(x = Party, y = `Exit poll`, text = str_glue("Exit poll projections {Party} won {`Exit poll`} seats.")), shape = 4, size = 3) +
+        geom_point(data = election_results, aes(x = Party, y = `Exit poll`, text = str_glue("Exit poll predicts {Party} has won {`Exit poll`} seats.")), shape = 4, size = 3) +
         theme(plot.title.position = "plot") +
         labs(
           title = "Projected number of seats (dots) and exit poll (crosses)",
