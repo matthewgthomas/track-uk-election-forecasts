@@ -129,6 +129,46 @@ economist <-
 
 write_csv(economist, str_glue("economist-mrp-{format(lubridate::now(), '%Y-%m-%d')}.csv"))
 
+# ---- The Economist (ensemble model) ----
+economist <- 
+  read_html_live("https://www.economist.com/interactive/uk-general-election/forecast")
+
+econ_html <- 
+  economist |> 
+  html_elements(xpath="*") |> 
+  html_text()
+
+str_extract(econ_html[145], "Stratford")
+
+economist$view()
+
+economist_predictions <- 
+  cons |> 
+  mutate(prediction = NA_character_)
+
+economist$click("#by-constituency-sidebar")
+economist$click(".svelte-select")
+
+
+
+for (i in 1:nrow(economist_predictions)) {
+  economist$type(".value-container .svelte-82qwg8", economist_predictions$constituency_name[i])
+  economist$press(".value-container .svelte-82qwg8", key_code = "Enter")
+  
+  Sys.sleep(0.1)
+  
+  economist_predictions$prediction[i] <- 
+    economist |> 
+    html_elements(".constituency-probability") |> 
+    html_text()
+  
+  print(paste0("Scraped ", economist_predictions$constituency_name[i]))
+  Sys.sleep(0.1)
+}
+
+
+
+
 # ---- Electoral Calculus ----
 ec_data_url <- "https://www.electoralcalculus.co.uk/fcgi-bin/calcwork23.py?seat="
 
