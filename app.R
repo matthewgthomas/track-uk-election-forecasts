@@ -86,7 +86,7 @@ ui <- fluidPage(
     
     uiOutput("results"),
 
-    h3("Every forecaster is predicting a Labour majority"),
+    h3("Every forecaster predicted a Labour majority"),
     p(str_glue("As of {format(current_date, '%A %d %B %Y')}, Labour is projected to win anywhere from {min(lab_forecasts$Seats)} to {max(lab_forecasts$Seats)} seats. The Conservatives could win between {min(con_forecasts$Seats)} and {max(con_forecasts$Seats)} seats.")),
     p(str_glue("Combining these forecasts, Labour could win {round(mean(lab_forecasts$Seats), 0)} seats while the Conservatives could win {round(mean(con_forecasts$Seats), 0)}.")),
     
