@@ -26,7 +26,7 @@ con_forecasts <-
   filter(Party == "Con")
 
 # Try to load election results
-election_results <- read_csv("https://github.com/matthewgthomas/track-uk-election-forecasts/raw/main/results.csv")
+election_results <- read_csv("results.csv")
 
 show_election_results <- !is.na(election_results$`Actual seats`[1])
 show_exit_poll <- !is.na(election_results$`Exit poll`[1])
