@@ -1,0 +1,151 @@
+Forecaster,Party,Seats,Actual seats,Difference
+The Economist,Con,112,121,9
+The Economist,Lab,427,412,15
+The Economist,SNP,20,9,11
+The Economist,Lib Dems,50,72,22
+The Economist,Reform,3,5,2
+The Economist,Others,5,23,18
+The Telegraph,Con,96,121,25
+The Telegraph,Lab,440,412,28
+Electoral Calculus,Con,78,121,43
+Electoral Calculus,Lab,453,412,41
+Electoral Calculus,SNP,19,9,10
+Electoral Calculus,Lib Dems,80,72,8
+Electoral Calculus,Reform,7,5,2
+Principal Fish,Con,104,121,17
+Principal Fish,Lab,446,412,34
+Principal Fish,SNP,19,9,10
+Principal Fish,Lib Dems,57,72,15
+Principal Fish,Reform,0,5,5
+ElectionMapsUK,Con,101,121,20
+ElectionMapsUK,Lab,432,412,20
+ElectionMapsUK,SNP,19,9,10
+ElectionMapsUK,Lib Dems,68,72,4
+ElectionMapsUK,Reform,3,5,2
+Survation (MRP),Con,64,121,57
+Survation (MRP),Lab,475,412,63
+Survation (MRP),SNP,13,9,4
+Survation (MRP),Lib Dems,60,72,12
+Survation (MRP),Plaid Cymru,4,4,0
+Survation (MRP),Green,3,4,1
+Survation (MRP),Reform,13,5,8
+Survation (MRP),Others,0,23,23
+Techne (MRP),Con,82,121,39
+Techne (MRP),Lab,461,412,49
+Techne (MRP),SNP,19,9,10
+Techne (MRP),Lib Dems,55,72,17
+Techne (MRP),Plaid Cymru,0,4,4
+Techne (MRP),Green,3,4,1
+Techne (MRP),Reform,7,5,2
+Techne (MRP),Others,23,23,0
+YouGov (MRP),Con,102,121,19
+YouGov (MRP),Lab,431,412,19
+YouGov (MRP),SNP,18,9,9
+YouGov (MRP),Lib Dems,72,72,0
+YouGov (MRP),Plaid Cymru,3,4,1
+YouGov (MRP),Green,2,4,2
+YouGov (MRP),Reform,3,5,2
+YouGov (MRP),Others,0,23,23
+More in Common (MRP),Con,126,121,5
+More in Common (MRP),Lab,430,412,18
+More in Common (MRP),SNP,16,9,7
+More in Common (MRP),Lib Dems,52,72,20
+More in Common (MRP),Plaid Cymru,2,4,2
+More in Common (MRP),Green,1,4,3
+More in Common (MRP),Reform,2,5,3
+More in Common (MRP),Others,2,23,21
+Survation (MRP),Con,64,121,57
+Survation (MRP),Lab,484,412,72
+Survation (MRP),SNP,10,9,1
+Survation (MRP),Lib Dems,61,72,11
+Survation (MRP),Plaid Cymru,3,4,1
+Survation (MRP),Green,3,4,1
+Survation (MRP),Reform,7,5,2
+Survation (MRP),Others,0,23,23
+Focaldata (MRP),Con,108,121,13
+Focaldata (MRP),Lab,444,412,32
+Focaldata (MRP),SNP,15,9,6
+Focaldata (MRP),Lib Dems,57,72,15
+Focaldata (MRP),Plaid Cymru,2,4,2
+Focaldata (MRP),Green,1,4,3
+Focaldata (MRP),Reform,2,5,3
+Focaldata (MRP),Others,19,23,4
+JL Partners (SRP),Con,105,121,16
+JL Partners (SRP),Lab,450,412,38
+JL Partners (SRP),SNP,15,9,6
+JL Partners (SRP),Lib Dems,55,72,17
+JL Partners (SRP),Plaid Cymru,3,4,1
+JL Partners (SRP),Green,1,4,3
+JL Partners (SRP),Reform,2,5,3
+JL Partners (SRP),Others,19,23,4
+Find Out Now/Electoral Calculus (MRP),Con,60,121,61
+Find Out Now/Electoral Calculus (MRP),Lab,450,412,38
+Find Out Now/Electoral Calculus (MRP),SNP,24,9,15
+Find Out Now/Electoral Calculus (MRP),Lib Dems,71,72,1
+Find Out Now/Electoral Calculus (MRP),Plaid Cymru,4,4,0
+Find Out Now/Electoral Calculus (MRP),Green,4,4,0
+Find Out Now/Electoral Calculus (MRP),Reform,18,5,13
+Find Out Now/Electoral Calculus (MRP),Others,1,23,22
+We Think (MRP),Con,76,121,45
+We Think (MRP),Lab,465,412,53
+We Think (MRP),SNP,29,9,20
+We Think (MRP),Lib Dems,52,72,20
+We Think (MRP),Plaid Cymru,3,4,1
+We Think (MRP),Green,3,4,1
+We Think (MRP),Reform,3,5,2
+We Think (MRP),Others,19,23,4
+Savanta (MRP),Con,53,121,68
+Savanta (MRP),Lab,516,412,104
+Savanta (MRP),SNP,8,9,1
+Savanta (MRP),Lib Dems,50,72,22
+Savanta (MRP),Plaid Cymru,4,4,0
+Savanta (MRP),Green,0,4,4
+Savanta (MRP),Reform,0,5,5
+Savanta (MRP),Others,0,23,23
+Ipsos (MRP),Con,115,121,6
+Ipsos (MRP),Lab,453,412,41
+Ipsos (MRP),SNP,15,9,6
+Ipsos (MRP),Lib Dems,38,72,34
+Ipsos (MRP),Plaid Cymru,4,4,0
+Ipsos (MRP),Green,3,4,1
+Ipsos (MRP),Reform,3,5,2
+Ipsos (MRP),Others,0,23,23
+Find Out Now/Electoral Calculus (MRP – with tactical voting),Con,66,121,55
+Find Out Now/Electoral Calculus (MRP – with tactical voting),Lab,476,412,64
+Find Out Now/Electoral Calculus (MRP – with tactical voting),SNP,26,9,17
+Find Out Now/Electoral Calculus (MRP – with tactical voting),Lib Dems,59,72,13
+Find Out Now/Electoral Calculus (MRP – with tactical voting),Plaid Cymru,3,4,1
+Find Out Now/Electoral Calculus (MRP – with tactical voting),Green,2,4,2
+Find Out Now/Electoral Calculus (MRP – with tactical voting),Reform,0,5,5
+Find Out Now/Electoral Calculus (MRP – with tactical voting),Others,0,23,23
+Find Out Now/Electoral Calculus (MRP – without tactical voting),Con,72,121,49
+Find Out Now/Electoral Calculus (MRP – without tactical voting),Lab,493,412,81
+Find Out Now/Electoral Calculus (MRP – without tactical voting),SNP,22,9,13
+Find Out Now/Electoral Calculus (MRP – without tactical voting),Lib Dems,39,72,33
+Find Out Now/Electoral Calculus (MRP – without tactical voting),Plaid Cymru,4,4,0
+Find Out Now/Electoral Calculus (MRP – without tactical voting),Green,2,4,2
+Find Out Now/Electoral Calculus (MRP – without tactical voting),Reform,0,5,5
+Find Out Now/Electoral Calculus (MRP – without tactical voting),Others,0,23,23
+New Statesman,Con,114,121,7
+New Statesman,Green,4,4,0
+New Statesman,Lab,418,412,6
+New Statesman,Lib Dems,65,72,7
+New Statesman,Others,1,23,22
+New Statesman,Plaid Cymru,3,4,1
+New Statesman,Reform,6,5,1
+New Statesman,SNP,23,9,14
+Average of recent forecasts,Con,89.36842105263158,121,31.631578947368425
+Average of recent forecasts,Green,2.2857142857142856,4,1.7142857142857144
+Average of recent forecasts,Lab,454.94736842105266,412,42.94736842105266
+Average of recent forecasts,Lib Dems,57.833333333333336,72,14.166666666666664
+Average of recent forecasts,Others,5.933333333333334,23,17.066666666666666
+Average of recent forecasts,Plaid Cymru,3,4,1
+Average of recent forecasts,Reform,4.388888888888889,5,0.6111111111111107
+Average of recent forecasts,SNP,18.333333333333332,9,9.333333333333332
+Exit poll,Con,131,121,10
+Exit poll,Lab,410,412,2
+Exit poll,Lib Dems,61,72,11
+Exit poll,Reform,13,5,8
+Exit poll,SNP,10,9,1
+Exit poll,Green,2,4,2
+Exit poll,Plaid Cymru,4,4,0

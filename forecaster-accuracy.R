@@ -30,7 +30,11 @@ forecasts_and_results <-
   add_row(combined_forecast) |> 
   add_row(exit_poll) |> 
   left_join(election_results) |> 
-  drop_na()
+  select(-`Exit poll`) |> 
+  drop_na() |> 
+  mutate(
+    Difference = abs(Seats - `Actual seats`)
+  )
   
 # Who was closest overall, using mean absolute error?
 overall_accuracy_mae <-
@@ -41,3 +45,10 @@ overall_accuracy_mae <-
 
 overall_accuracy_mae |> 
   arrange(.estimate)
+
+# ---- Save forecasts, results and accuracy ----
+overall_accuracy_mae |> 
+  select(Forecaster, .estimate) |> 
+  write_csv("forecast-accuracy.csv")
+
+write_csv(forecasts_and_results, "forecasts-and-results.csv")
