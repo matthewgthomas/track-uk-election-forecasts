@@ -72,6 +72,8 @@ ui <- fluidPage(
     titlePanel("Seat Seer: Tracking seat predictions for the UK's General Election"),
     
     uiOutput("results"),
+    p("This chart shows how accurate each forecaster was, based on the", a("average difference", href="https://en.wikipedia.org/wiki/Mean_absolute_error", target = "_blank"), "between their seat predictions for each party and the actual number of seats won. Lower scores mean greater accuracy."),
+    plotlyOutput("forecaster_accuracy"),
 
     h3("Every forecaster predicted a Labour majority"),
     p(str_glue("As of the morning of the election, Labour was projected to win anywhere from {min(lab_forecasts$Seats)} to {max(lab_forecasts$Seats)} seats. The Conservatives were projected to win between {min(con_forecasts$Seats)} and {max(con_forecasts$Seats)} seats.")),
@@ -99,6 +101,21 @@ ui <- fluidPage(
 
 # ---- Server ----
 server <- function(input, output) {
+  output$forecaster_accuracy <- renderPlotly({
+    plt <- 
+      overall_accuracy |> 
+      ggplot(aes(x = reorder(Forecaster, -.estimate), y = .estimate)) +
+      geom_col(aes(text = str_glue("Accuracy of forecast (mean absolute error): {round(.estimate, 1)}"))) +
+      coord_flip() +
+      theme_minimal() +
+      labs(
+        x = NULL,
+        y = "Accuracy of forecasts (using mean absolute error)\nMore accurate forecasts have lower scores"
+      )
+    
+    ggplotly(plt, tooltip = "text")
+  })
+  
   output$most_recent_forecasts <- renderPlotly({
     plt <- 
       recent_forecasts |>
@@ -153,7 +170,7 @@ server <- function(input, output) {
   })
   
   output$results <- renderUI({
-    forecast_word <- ifelse(length(overall_accuracy) == 1, "forecast", "forecasts")
+    forecast_word <- ifelse(length(overall_accuracy_forecaster) == 1, "forecast", "forecasts")
     
     exit_poll_message <- ifelse(
       exit_poll_accuracy_mae < overall_accuracy_mae, 
