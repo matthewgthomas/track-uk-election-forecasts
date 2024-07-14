@@ -2,6 +2,7 @@ library(tidyverse)
 library(rvest)
 library(jsonlite)
 library(sf)
+library(googlesheets4)
 
 # ---- List of constituencies ----
 # Source: https://geoportal.statistics.gov.uk/datasets/ons::westminster-parliamentary-constituencies-july-2024-names-and-codes-in-the-uk-v2/about
@@ -197,3 +198,31 @@ for (i in 1:nrow(ec)) {
   print(paste0("Scraped ", ec$ec_name[i]))
   Sys.sleep(1)
 }
+
+# ---- New Statesman ----
+gs4_deauth()  # Don't need auth
+ns_url <- "https://docs.google.com/spreadsheets/d/1lh0YfXwxNqLQXTvH-wKu0_zG1SVKjLqCTls7WTEXiVk/"
+
+ns_sheets <- 
+  sheet_names(ns_url) |> 
+  set_names()
+
+ns_latest_raw <- 
+  read_sheet(ns_url, sheet = ns_sheets[1])
+
+ns_forecast <- 
+  ns_latest_raw |> 
+  mutate(prediction = case_match(
+    Win,
+    "LDem" ~ "Lib Dems",
+    "Ref" ~ "Reform",
+    "Grn" ~ "Green",
+    "Oth" ~ "Other",
+    "PC" ~ "Plaid Cymru",
+    .default = Win
+  )) |> 
+  
+  left_join(cons, by = c("Constituency" = "constituency_name")) |> 
+  select(constituency_code, prediction)
+
+write_csv(ns_forecast, "new-statesman-2024-07-03.csv")
